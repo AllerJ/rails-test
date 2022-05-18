@@ -1,0 +1,21 @@
+<%= form_with model: @company do |form| %>
+  <div>
+	<%= form.label :name, "Company Name" %><br>
+	<%= form.text_field :name, class: "uk-input" %>
+	<% @company.errors.full_messages_for(:name).each do |message| %>
+	  <div><%= message %></div>
+	<% end %>
+  </div>
+
+  <div class="uk-margin-top">
+	<%= form.label :note %><br>
+	<%= form.text_area :note, class: "uk-textarea" %><br>
+	<% @company.errors.full_messages_for(:note).each do |message| %>
+	  <div><%= message %></div>
+	<% end %>
+  </div>
+
+  <div>
+	<%= form.submit class: "uk-button uk-button-default uk-margin-top" %>
+  </div>
+<% end %>

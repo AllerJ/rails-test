@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Playground</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <nav class="uk-navbar-container uk-margin uk-margin-remove-bottom" uk-navbar>
+        <div class="uk-navbar-center">
+
+            <div class="uk-navbar-center-left"><div>
+                <ul class="uk-navbar-nav">
+                    <li><a href="/">All</a></li>
+                </ul>
+            </div></div>
+            <a class="uk-navbar-item uk-logo" href="/">Application Tracker</a>
+            <div class="uk-navbar-center-right"><div>
+                <ul class="uk-navbar-nav">
+                    <li><%= link_to "New", new_company_path %>
+                      </li>
+                </ul>
+            </div></div>
+
+        </div>
+    </nav>
+    <div class="uk-section uk-section-primary">
+        <div class="uk-container uk-container-xsmall">
+          <%= yield %>
+        </div>
+    </div>
+  </body>
+</html>

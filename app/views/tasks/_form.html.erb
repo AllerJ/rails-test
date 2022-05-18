@@ -1,0 +1,13 @@
+<%= form_with model: [ @company, @company.tasks.build ] do |form| %>
+  <div>
+	  <%= form.label :subject %><br>
+	  <%= form.text_field :subject,  class: "uk-input uk-form-width-large" %>
+  </div>
+  <div class="uk-margin-top">
+	  <%= form.label :note, "Description" %><br>
+	  <%= form.text_area :note, class: "uk-textarea uk-form-width-large" %>
+  </div>
+  <div>
+    <%= form.submit  class: "uk-button uk-button-default uk-margin-top"%>
+  </div>
+<% end %>

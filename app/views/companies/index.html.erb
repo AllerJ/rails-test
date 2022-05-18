@@ -1,0 +1,34 @@
+<h1>Applied To:</h1>
+
+<table class="uk-table uk-table-striped uk-table-middle">
+<thead>
+	<tr>
+		<th class="uk-padding-left">Company</th>
+		<th>Note</th>
+		<th>Action</th>
+	</tr>
+</thead>
+<tbody>
+  <% @companies.each do |company| %>
+	<tr>
+		<td><%= link_to company.name, company %></td>
+		<td><%= company.note[0..50] %>...</td>
+		<td>
+			<%= link_to "", company,
+				class:"uk-icon-button uk-button-primary",
+				"uk-icon":"search"
+			%>
+			<%= link_to "",  edit_company_path(company),
+				class: "uk-icon-button uk-button-danger",
+				"uk-icon":"pencil"
+			%>
+		</td>
+	</tr>
+  <% end %>
+</tbody>
+</table>
+
+
+<%= link_to "New Application", new_company_path, class: "uk-button uk-button-primary" %>
+
+

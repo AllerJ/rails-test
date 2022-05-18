@@ -1,0 +1,26 @@
+<h1><%= @company.name %></h1>
+
+<p><%= raw Anchored::Linker.auto_link( @company.note ) %></p>
+
+<div class="">
+
+<%= link_to "",  edit_company_path(@company),
+	class: "uk-icon-button uk-button-primary",
+	"uk-icon":"pencil"
+%>
+</div>
+<hr>
+<table class="uk-table uk-table-hover">
+	<thead>
+		<tr>
+			<td>Subject</td>
+			<td>Descrirption</td>
+		</tr>
+	</thead>
+	<tbody>
+	<%= render @company.tasks %>
+	</tbody>
+</table>
+
+<h4>Add a Task:</h4>
+<%= render 'tasks/form' %>
